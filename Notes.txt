@@ -1,0 +1,1588 @@
+# Create the Python notes file
+notes_content = """# 🐍 PYTHON COMPLETE NOTES (Beginner to Tuples)
+
+## 1. INTRODUCTION TO PYTHON
+
+**What is Python?**
+- Python is a high-level, interpreted, general-purpose programming language
+- Created by Guido van Rossum in 1991
+- Named after the TV show "Monty Python's Flying Circus"
+- Known for simple, readable syntax
+
+**Why Python?**
+- Easy to learn and read
+- Large standard library
+- Supports multiple programming paradigms (procedural, object-oriented, functional)
+- Widely used in web development, data science, AI, automation
+
+**Installation & Setup:**
+- Download from python.org
+- Install Python 3.x (current version)
+- Verify installation: `python --version`
+
+**Running Python:**
+1. **Interactive mode**: Type `python` in terminal
+2. **Script mode**: Create `.py` file and run with `python filename.py`
+
+**Print Statement:**
+```python
+print("Hello, World!")
+print(42)
+print("Name:", "Alice")
+```
+
+---
+
+## 2. BASIC SYNTAX & STRUCTURE
+
+**Python Indentation:**
+- Python uses indentation (not curly braces) to define code blocks
+- Standard: 4 spaces per indentation level
+- Indentation is mandatory
+
+```python
+if 5 > 2:
+    print("Five is greater")  # 4 spaces indent
+```
+
+**Comments:**
+```python
+# Single-line comment
+
+"""
+Multi-line comment
+(also used for docstrings)
+"""
+```
+
+**Variables:**
+```python
+name = "Morgan Carter"       # Variable assignment
+age = 20
+height = 5.8
+is_student = True
+```
+
+**Rules:**
+- No declaration needed (just assign)
+- Variable names are case-sensitive
+- Can't start with number
+- Use lowercase with underscores: `my_variable`
+
+---
+
+## 3. DATA TYPES
+
+**Basic Data Types:**
+
+| Type | Example | Description |
+|------|---------|-------------|
+| int | `42` | Whole numbers |
+| float | `3.14` | Decimal numbers |
+| complex | `2+3j` | Complex numbers |
+| str | `"hello"` | Text strings |
+| bool | `True/False` | Boolean values |
+| list | `[1, 2, 3]` | Ordered, mutable |
+| tuple | `(1, 2, 3)` | Ordered, immutable |
+| dict | `{"key": "value"}` | Key-value pairs |
+| set | `{1, 2, 3}` | Unordered, unique |
+
+**Checking Data Type:**
+```python
+x = 42
+print(type(x))  # Output: <class 'int'>
+```
+
+**Type Conversion (Casting):**
+```python
+# String to integer
+age = int("25")
+
+# Integer to string
+text = str(100)
+
+# String to float
+price = float("99.99")
+
+# Float to integer
+whole = int(3.14)  # Output: 3
+```
+
+---
+
+## 4. OPERATORS
+
+**Arithmetic Operators:**
+```python
+a = 10
+b = 3
+
+print(a + b)   # Addition: 13
+print(a - b)   # Subtraction: 7
+print(a * b)   # Multiplication: 30
+print(a / b)   # Division: 3.333...
+print(a % b)   # Modulus (remainder): 1
+print(a // b)  # Floor division: 3
+print(a ** b)  # Exponentiation: 1000
+```
+
+**Comparison Operators:**
+```python
+print(5 == 5)   # Equal: True
+print(5 != 3)   # Not equal: True
+print(5 > 3)    # Greater than: True
+print(5 < 3)    # Less than: False
+print(5 >= 5)   # Greater or equal: True
+print(5 <= 4)   # Less or equal: False
+```
+
+**Logical Operators:**
+```python
+x = True
+y = False
+
+print(x and y)   # AND: False (both must be True)
+print(x or y)    # OR: True (at least one True)
+print(not x)     # NOT: False (inverts value)
+```
+
+**Assignment Operators:**
+```python
+a = 5
+a += 3   # a = a + 3 → 8
+a -= 2   # a = a - 2 → 6
+a *= 4   # a = a * 4 → 24
+a /= 6   # a = a / 6 → 4.0
+```
+
+**Identity Operators:**
+```python
+a =[11][12][13]
+b =[12][13][11]
+c = a
+
+print(a is c)    # True (same object)
+print(a is b)    # False (different objects)
+print(a == b)    # True (same values)
+```
+
+**Membership Operators:**
+```python
+my_list =[13][14][15][11][12]
+
+print(3 in my_list)      # True
+print(10 not in my_list) # True
+```
+
+---
+
+## 5. STRINGS
+
+**String Creation:**
+```python
+s1 = "Hello"
+s2 = 'World'
+s3 = """Multi-line
+string"""
+s4 = '''Also multi-line'''
+```
+
+**Concatenation:**
+```python
+first = "Morgan Carter"
+last = "Carter"
+full = first + " " + last  # "Morgan Carter Carter"
+```
+
+**Indexing & Slicing:**
+```python
+text = "Python"
+
+print(text)      # 'P' (first character)
+print(text[-1])     # 'n' (last character)
+print(text[0:3])    # 'Pyt' (slice from 0 to 2)
+print(text[2:])     # 'tho' (from index 2 to end)
+print(text[:4])     # 'Pyth' (from start to index 3)
+print(text[::-1])   # 'nohtyP' (reverse string)
+```
+
+**Common String Methods:**
+```python
+text = "  Hello World  "
+
+print(len(text))           # Length: 15
+print(text.upper())        # '  HELLO WORLD  '
+print(text.lower())        # '  hello world  '
+print(text.strip())        # 'Hello World' (remove whitespace)
+print(text.replace("H", "J"))  # '  Jello World  '
+print(text.split())        # ['Hello', 'World']
+
+s = "hello"
+print(s.capitalize())      # 'Hello'
+print(s.title())           # 'Hello'
+print(s.isalpha())         # True (all alphabetic)
+print(s.isdigit())         # False
+print(s.startswith("he"))  # True
+print(s.endswith("lo"))    # True
+```
+
+**String Formatting:**
+```python
+name = "Morgan Carter"
+age = 20
+
+# Method 1: f-strings (recommended)
+print(f"My name is {name} and I'm {age} years old")
+
+# Method 2: .format()
+print("My name is {} and I'm {} years old".format(name, age))
+
+# Method 3: % formatting
+print("My name is %s and I'm %d years old" % (name, age))
+```
+
+---
+
+## 6. INPUT/OUTPUT
+
+**Input Function:**
+```python
+# Basic input
+name = input("Enter your name: ")
+
+# Input with type conversion
+age = int(input("Enter your age: "))
+price = float(input("Enter price: "))
+
+# Note: input() always returns string, convert if needed
+```
+
+**Print Function:**
+```python
+# Basic print
+print("Hello")
+
+# Print multiple values
+print("Name:", name, "Age:", age)
+
+# Customize separator
+print("A", "B", "C", sep="-")  # A-B-C
+
+# End parameter
+print("Hello", end=" ")
+print("World")  # Hello World (no newline)
+```
+
+---
+
+## 7. CONTROL STRUCTURES
+
+### **Conditional Statements**
+
+**if Statement:**
+```python
+age = 18
+
+if age >= 18:
+    print("You're eligible to vote")
+```
+
+**if-else:**
+```python
+marks = 75
+
+if marks >= 50:
+    print("Passed")
+else:
+    print("Failed")
+```
+
+**if-elif-else:**
+```python
+grade = 85
+
+if grade >= 90:
+    print("A+")
+elif grade >= 80:
+    print("A")
+elif grade >= 70:
+    print("B")
+elif grade >= 60:
+    print("C")
+else:
+    print("F")
+```
+
+**Nested if:**
+```python
+age = 25
+has_license = True
+
+if age >= 18:
+    if has_license:
+        print("You can drive")
+    else:
+        print("Need a license")
+else:
+    print("Too young")
+```
+
+### **Loops**
+
+**for Loop:**
+```python
+# Iterate through range
+for i in range(5):        # 0, 1, 2, 3, 4
+    print(i)
+
+# Range with start and end
+for i in range(2, 6):     # 2, 3, 4, 5
+    print(i)
+
+# Range with step
+for i in range(0, 10, 2): # 0, 2, 4, 6, 8
+    print(i)
+
+# Iterate through list
+names = ["Alice", "Bob", "Charlie"]
+for name in names:
+    print(name)
+
+# Iterate through string
+for char in "Python":
+    print(char)
+```
+
+**while Loop:**
+```python
+# Basic while
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# User input loop
+num = 0
+while num != 10:
+    num = int(input("Enter 10: "))
+print("Correct!")
+```
+
+**Loop Control Statements:**
+
+**break** (exit loop):
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)  # 0, 1, 2, 3, 4
+```
+
+**continue** (skip current iteration):
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)  # 0, 1, 3, 4
+```
+
+**pass** (skip, do nothing):
+```python
+for i in range(5):
+    if i == 2:
+        pass  # Do nothing
+    print(i)
+```
+
+**Nested Loops:**
+```python
+for i in range(3):           # Outer loop
+    for j in range(2):       # Inner loop
+        print(f"i={i}, j={j}")
+```
+
+**Loop with else:**
+```python
+for i in range(5):
+    print(i)
+else:
+    print("Loop completed")  # Runs after loop ends
+```
+
+---
+
+## 8. LISTS (Data Structure Before Tuples)
+
+**List Creation:**
+```python
+# Empty list
+empty = []
+empty2 = list()
+
+# List with values
+numbers =[14][15][11][12][13]
+mixed = [1, "hello", 3.14, True]
+nested = [, ][11][12][13][14]
+```
+
+**Accessing Elements:**
+```python
+my_list =[10][16]
+
+print(my_list)      # 10 (first element)
+print(my_list[-1])     # 50 (last element)
+print(my_list[1:3])    #  (slice)[10]
+print(my_list[:3])     #[16][10]
+print(my_list[2:])     # 
+```
+
+**List Operations:**
+```python
+# Concatenation
+list1 =[12][13][11]
+list2 =[15][17][14]
+combined = list1 + list2  #[17][13][14][15][11][12]
+
+# Repetition
+repeated =  * 3  #[11][12]
+
+# Length
+print(len(my_list))    # 5
+
+# Check existence
+print(30 in my_list)   # True
+```
+
+**Modifying Lists:**
+```python
+my_list =[13][14][15][12][11]
+
+# Change element
+my_list = 100  #[14][15][12][13]
+
+# Add elements
+my_list.append(6)         # Add to end:[15][17][12][13][14][11]
+my_list.insert(2, 99)     # Insert at index 2:[12][13][14][15][11]
+my_list.extend()    # Add multiple:[18][19][13][14][15][11][12]
+
+# Remove elements
+my_list.remove(3)         # Remove value 3
+popped = my_list.pop()    # Remove last element
+popped2 = my_list.pop(1)  # Remove at index 1
+del my_list            # Delete at index
+my_list.clear()           # Remove all elements
+```
+
+**List Methods:**
+```python
+numbers =[19][20][13][15][11][12]
+
+numbers.sort()            # Sort:[20][19][13][15][11][12]
+numbers.sort(reverse=True) # Reverse sort
+
+numbers.reverse()         # Reverse order
+
+index = numbers.index(8)  # Find index of 8
+count = numbers.count(3)  # Count occurrences of 3
+
+copy_list = numbers.copy() # Create copy
+```
+
+**List Comprehension:**
+```python
+# Create list with expression
+squares = [x**2 for x in range(5)]  #[6][20][14][11]
+
+# With condition
+even = [x for x in range(10) if x % 2 == 0]  #[17][19][14][12]
+```
+
+**Iterating Through List:**
+```python
+fruits = ["apple", "banana", "cherry"]
+
+# Basic iteration
+for fruit in fruits:
+    print(fruit)
+
+# With index
+for i, fruit in enumerate(fruits):
+    print(f"{i}: {fruit}")
+```
+
+---
+
+## 9. TUPLES ⭐
+
+**What is a Tuple?**
+- Ordered collection (like list)
+- **Immutable** (cannot change after creation)
+- Faster than lists
+- Uses parentheses `()`
+
+**Tuple Creation:**
+```python
+# Empty tuple
+empty = ()
+empty2 = tuple()
+
+# Tuple with values
+my_tuple = (1, 2, 3, 4, 5)
+single = (42,)  # Note comma for single element
+mixed = (1, "hello", 3.14, True)
+
+# Without parentheses (tuple packing)
+another = 1, 2, 3
+```
+
+**Accessing Elements:**
+```python
+my_tuple = (10, 20, 30, 40, 50)
+
+print(my_tuple)      # 10
+print(my_tuple[-1])     # 50 (last element)
+print(my_tuple[1:3])    # (20, 30) (slice)
+print(my_tuple[2:])     # (30, 40, 50)
+print(my_tuple[:4])     # (10, 20, 30, 40)
+print(my_tuple[::-1])   # (50, 40, 30, 20, 10) (reverse)
+```
+
+**Tuple Properties:**
+```python
+my_tuple = (1, 2, 3)
+
+# Immutable - CANNOT do this:
+# my_tuple = 100  # ERROR! TypeError
+
+# Ordered - maintains position
+print(my_tuple == 1)  # True
+
+# Can contain duplicates
+dup = (1, 1, 2, 2, 3)
+
+# Faster than lists (optimized for fixed data)
+```
+
+**Tuple Methods:**
+```python
+my_tuple = (1, 2, 3, 2, 4, 2)
+
+# count() - count occurrences
+print(my_tuple.count(2))  # 3
+
+# index() - find index of value
+print(my_tuple.index(3))  # 2
+print(my_tuple.index(2))  # 1 (first occurrence)
+```
+
+**Tuple Operations:**
+```python
+# Concatenation
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+combined = tuple1 + tuple2  # (1, 2, 3, 4, 5, 6)
+
+# Repetition
+repeated = (1, 2) * 3  # (1, 2, 1, 2, 1, 2)
+
+# Length
+print(len(tuple1))  # 3
+
+# Check existence
+print(5 in tuple2)  # True
+
+# Sorting (creates new list)
+nums = (3, 1, 4, 1, 5)
+sorted_list = sorted(nums)  #[13][14][15][11]
+```
+
+**Unpacking Tuples:**
+```python
+# Basic unpacking
+coordinates = (10, 20)
+x, y = coordinates
+print(x)  # 10
+print(y)  # 20
+
+# Unpack with * (gather remaining)
+numbers = (1, 2, 3, 4, 5)
+first, *middle, last = numbers
+print(first)   # 1
+print(middle)  #[14][12][13]
+print(last)    # 5
+
+# Swap values (classic Python trick)
+a, b = 5, 10
+a, b = b, a  # a=10, b=5
+
+# Function returning tuple
+def get_name():
+    return "Morgan Carter", "Carter"
+
+first_name, last_name = get_name()
+```
+
+**Tuple vs List:**
+
+| Feature | List | Tuple |
+|---------|------|-------|
+| Syntax | `[1, 2, 3]` | `(1, 2, 3)` |
+| Mutable | ✅ Yes | ❌ No |
+| Speed | Slower | Faster |
+| Methods | Many | Only count() & index() |
+| Use case | Flexible data | Fixed data |
+| Memory | Larger | Smaller |
+
+**When to Use Tuples:**
+- Data that shouldn't change (coordinates, dates, RGB colors)
+- Returning multiple values from functions
+- Dictionary keys (lists can't be keys)
+- When you need immutability for safety
+
+**Common Tuple Examples:**
+```python
+# Coordinates
+point = (3, 4)
+
+# RGB Color
+color = (255, 128, 0)
+
+# Date
+date = (2026, 6, 11)
+
+# Multiple return values
+def get_student_info():
+    return "Morgan Carter", 20, "Puducherry"
+
+name, age, location = get_student_info()
+```
+
+**Nested Tuples:**
+```python
+nested = ((1, 2), (3, 4), (5, 6))
+print(nested)      # (1, 2)
+print(nested)   # 3[11]
+```
+
+**Converting Between List and Tuple:**
+```python
+# Tuple to list
+my_tuple = (1, 2, 3)
+my_list = list(my_tuple)  #[12][13][11]
+
+# List to tuple
+my_list =[13][11][12]
+my_tuple = tuple(my_list)  # (1, 2, 3)
+```
+
+## 1. Dictionaries
+
+A dictionary is a collection of data stored as **key-value pairs**.  
+It is used when we want to store and access related information quickly.
+
+### Example
+```python
+studentData = {
+    "name": "Ramya",
+    "email": "ramya@gmail.com",
+    "mobile": 597694567,
+    "isActive": True
+}
+```
+
+### Features
+- Keys are unique.
+- Values can be anything: number, string, list, boolean, etc.
+- Dictionaries are **mutable**, so we can change them.
+
+### Common dictionary operations
+```python
+print(studentData)
+print(type(studentData))
+print(len(studentData))
+
+print(studentData["email"])
+print(studentData.get("email"))
+
+print(studentData.keys())
+print(studentData.values())
+```
+
+### Adding a new item
+```python
+studentData["total"] = 500
+print(studentData)
+```
+
+### Updating a value
+```python
+studentData.update({"mobile": 1234567890})
+print(studentData)
+```
+
+### Removing a value
+```python
+studentData.pop("isActive")
+print(studentData)
+```
+
+### Changing a value
+```python
+studentData["name"] = "mithra"
+print(studentData)
+```
+
+### Dictionary with list as value
+```python
+studentData["marks"] = [100, 89, 78, 72, 99]
+print(studentData)
+```
+
+### Looping through dictionary
+```python
+for key, val in studentData.items():
+    print(f"{key} = {val}")
+```
+
+***
+
+## 2. List of Dictionaries
+
+A list can store many dictionaries.  
+This is useful for storing details of many students.
+
+### Example
+```python
+StudentsData = [
+    {
+        "name": "aaa",
+        "email": "aaa@gmail.com",
+        "marks": [70, 96, 25, 69, 48]
+    },
+    {
+        "name": "bbb",
+        "email": "bbb@gmail.com",
+        "marks": [90, 96, 35, 39, 48]
+    },
+    {
+        "name": "ccc",
+        "email": "ccc@gmail.com",
+        "marks": [70, 66, 45, 29, 48]
+    }
+]
+```
+
+### Accessing one student
+```python
+print(StudentsData[1])
+```
+
+### Displaying all values
+```python
+for student in StudentsData:
+    print(student)
+```
+
+***
+
+## 3. Creating Result List from Marks
+
+If marks are stored as a list, we can calculate the total marks and store the result in a new list of dictionaries.
+
+### Example
+```python
+result = []
+
+for student in StudentsData:
+    total = 0
+    for mark in student["marks"]:
+        total += mark
+
+    result.append({
+        "name": student["name"],
+        "email": student["email"],
+        "marks": total
+    })
+
+print(result)
+```
+
+### Using this output
+This changes:
+```python
+"marks": [70, 96, 25, 69, 48]
+```
+
+into:
+```python
+"marks": 308
+```
+
+***
+
+## 4. Sorting Student Records
+
+To sort students from highest to lowest marks, we can compare marks and swap the dictionaries.
+
+### Example
+```python
+n = len(result)
+
+for i in range(n):
+    for j in range(i + 1, n):
+        if result[i]["marks"] < result[j]["marks"]:
+            temp = result[i]
+            result[i] = result[j]
+            result[j] = temp
+
+print(result)
+```
+
+### Important idea
+- Do not swap only the marks.
+- Swap the full dictionary so name, email, and marks stay together.
+
+***
+
+## 5. Adding Remarks
+
+After sorting, we can add remarks based on marks.
+
+### Example
+```python
+for y in result:
+    if 450 <= y["marks"] <= 500:
+        y["remarks"] = "Superb, You nailed it!"
+    elif 400 <= y["marks"] <= 449:
+        y["remarks"] = "Good, Keep it up!"
+    else:
+        y["remarks"] = "Can do better!"
+```
+
+### Displaying clean output
+```python
+for y in result:
+    print("Name   :", y["name"])
+    print("Email  :", y["email"])
+    print("Marks  :", y["marks"])
+    print("Remark :", y["remarks"])
+    print("-" * 30)
+```
+
+***
+
+## Functions
+
+A function is a reusable block of code that performs a specific task.
+
+### Why functions are useful
+- Avoid repeating code.
+- Make programs shorter and cleaner.
+- Help organize code better.
+
+### Defining a function
+```python
+def greet():
+    print("Hello")
+```
+
+### Calling a function
+```python
+greet()
+```
+
+***
+##Parameters and Arguments
+
+Parameters are variables written inside the function definition.  
+Arguments are the actual values passed when calling the function.
+
+### Example
+```python
+def greet(name):
+    print("Hello", name)
+
+greet("Morgan")
+```
+
+Here:
+- `name` is the parameter.
+- `"Morgan"` is the argument.
+
+### Function with more than one parameter
+```python
+def add(a, b):
+    print(a + b)
+
+add(5, 3)
+```
+
+***
+
+## Simple Function Example
+
+```python
+def total_marks(marks):
+    total = 0
+    for mark in marks:
+        total += mark
+    print(total)
+
+total_marks([10, 20, 30])
+```
+
+### What happens
+- The function gets a list of marks.
+- It adds them.
+- It prints the total.
+
+***
+
+## Function with Student Data
+
+```python
+def show_student(student):
+    print("Name :", student["name"])
+    print("Email:", student["email"])
+    print("Marks:", student["marks"])
+
+show_student({
+    "name": "Alex",
+    "email": "alex78@gmail.com",
+    "marks": 308
+})
+```
+# Python Notes: Return, *args, **kwargs, Scope, Lambda
+
+## 1. Return Statement
+The `return` statement is used inside a function to send a value back to where the function was called.  
+When `return` runs, the function stops immediately.
+
+### Example
+```python
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)
+```
+
+### Important points
+- `return` gives output from a function.
+- Code after `return` will not run.
+- If a function has no return statement, it gives `None`.
+
+### Example
+```python
+def hello():
+    print("Hi")
+
+x = hello()
+print(x)
+```
+
+***
+
+## 2. Arbitrary Arguments (*args)
+
+Sometimes we do not know how many values will be passed into a function.  
+For that, we use `*args`.
+
+`*args` allows a function to accept many positional arguments.
+
+### Example
+```python
+def total(*numbers):
+    sum = 0
+    for n in numbers:
+        sum += n
+    print(sum)
+
+total(10, 20, 30)
+total(5, 15, 25, 35)
+```
+
+### Important points
+- `*args` collects values into a tuple.
+- It is used when number of arguments is not fixed.
+
+***
+
+## 3. Keyword Arbitrary Arguments (**kwargs)
+
+`**kwargs` is used when we want to pass many keyword arguments.
+
+It collects arguments as a dictionary.
+
+### Example
+```python
+def student_info(**data):
+    for key, value in data.items():
+        print(key, value)
+
+student_info(name="Alex", age=20, city="Puducherry")
+```
+
+### Important points
+- `**kwargs` collects data into a dictionary.
+- Keys are the argument names.
+- Values are the argument values.
+
+***
+
+## 4. Scope
+
+Scope tells us where a variable can be used.
+
+### Local scope
+A variable created inside a function is local.  
+It can only be used inside that function.
+
+```python
+def show():
+    x = 10
+    print(x)
+
+show()
+```
+
+### Global scope
+A variable created outside a function is global.  
+It can be used inside and outside functions.
+
+```python
+x = 20
+
+def show():
+    print(x)
+
+show()
+print(x)
+```
+
+### Important points
+- Local variable = inside function.
+- Global variable = outside function.
+- A local variable cannot be used outside its function.
+
+***
+
+## 5. Lambda Function
+
+A lambda function is a small anonymous function.  
+It is written in one line.
+
+### Syntax
+```python
+lambda arguments: expression
+```
+
+### Example
+```python
+add = lambda a, b: a + b
+print(add(5, 3))
+```
+
+### Another example
+```python
+square = lambda x: x * x
+print(square(4))
+```
+
+## 1. Global Keyword
+
+A variable created outside a function is a **global variable**.  
+It can be used inside functions too.
+
+```python
+x = 10
+
+def show():
+    print(x)
+
+show()
+print(x)
+```
+
+### Global keyword
+If you want to change a global variable inside a function, use `global`.
+
+```python
+x = 10
+
+def change():
+    global x
+    x = 20
+
+change()
+print(x)
+```
+
+### Important points
+- Global variables are created outside functions.
+- `global` is used to modify them inside a function.
+- Without `global`, a variable created inside a function is local.
+
+***
+
+## 2. Local Variable
+
+A variable created inside a function is called a **local variable**.  
+It works only inside that function.
+
+```python
+def demo():
+    y = 5
+    print(y)
+
+demo()
+```
+
+### Important points
+- Local variables cannot be used outside the function.
+- If you try, you get an error.
+
+```python
+def demo():
+    y = 5
+
+print(y)   # Error
+```
+
+***
+
+## 3. Git
+
+Git is a **version control system**.  
+It helps you track changes in your code and save different versions.
+
+### Why Git is useful
+- Keeps track of file changes.
+- Helps you go back to older versions.
+- Useful for teamwork.
+- Saves project history.
+
+### Common Git terms
+- **Repository**: a project folder tracked by Git.
+- **Commit**: a saved version of your work.
+- **Branch**: a separate line of work.
+- **Clone**: copy a repository to your computer.
+
+***
+
+## 4. GitHub
+
+GitHub is an **online platform** where Git repositories are stored.  
+It lets you upload, share, and manage your code on the internet.
+
+### Git vs GitHub
+| Git | GitHub |
+|---|---|
+| Software | Website/service |
+| Used on your computer | Used online |
+| Tracks code history | Stores Git projects online |
+| Works without internet | Usually needs internet for sharing |
+
+### Simple difference
+- **Git** = tool
+- **GitHub** = place to store/share Git projects
+
+***
+
+## 5. Installing Git
+
+Git can be installed on your device like a normal software tool.  
+After installation, you can use it from Command Prompt or terminal.
+
+### Common setup commands
+```bash
+git --version
+```
+
+This checks whether Git is installed.
+
+***
+
+## 6. Setting username and email in Git
+
+Git uses your name and email to identify your commits.
+
+### Set username
+```bash
+git config --global user.name "Your Name"
+```
+
+### Set email
+```bash
+git config --global user.email "your_email@example.com"
+```
+
+### Check settings
+```bash
+git config --global user.name
+git config --global user.email
+```
+
+***
+Absolutely — here is a cleaner **text-note style** version with **methods, examples, and quick notes** included for easy revision.
+
+***
+
+## 1. What is a Set?
+A set is an **unordered collection of unique items**.  
+It is used when we want to store values without duplicates.
+
+### Example
+```python
+my_set = {1, 2, 3, 4}
+print(my_set)
+```
+
+### Important notes
+- Sets do not allow duplicate values.
+- Sets are unordered, so indexing does not work.
+- Sets are mutable, so we can add and remove items.
+
+***
+
+## 2. Creating a Set
+
+### Using curly braces
+```python
+s = {10, 20, 30}
+print(s)
+```
+
+### Using set()
+```python
+s = set([10, 20, 30])
+print(s)
+```
+
+### Empty set
+```python
+empty_set = set()
+print(empty_set)
+```
+
+### Note
+- `{}` creates an empty **dictionary**, not a set.
+- To create an empty set, use `set()`.
+
+***
+
+## 3. Duplicate Values
+If a set has duplicate values, Python keeps only one copy.
+
+### Example
+```python
+s = {1, 2, 2, 3, 3, 4}
+print(s)
+```
+
+### Output
+```python
+{1, 2, 3, 4}
+```
+
+### Note
+- This is one of the main uses of sets: removing duplicates.
+
+***
+
+## 4. Accessing Set Items
+You cannot access set items by index.
+
+### Wrong
+```python
+s = {10, 20, 30}
+print(s[0])   # Error
+```
+
+### Right
+Use a loop:
+```python
+s = {10, 20, 30}
+for item in s:
+    print(item)
+```
+
+***
+
+## 5. Adding Items
+
+### add()
+Adds one item to the set.
+
+```python
+s = {1, 2, 3}
+s.add(4)
+print(s)
+```
+
+### update()
+Adds many items from another iterable.
+
+```python
+s = {1, 2, 3}
+s.update([4, 5, 6])
+print(s)
+```
+
+### Notes
+- `add()` is for one item.
+- `update()` is for multiple items.
+
+***
+
+## 6. Removing Items
+
+### remove()
+Removes a specified item.
+
+```python
+s = {1, 2, 3}
+s.remove(2)
+print(s)
+```
+
+### Note
+- If the item is not present, `remove()` gives an error.
+
+***
+
+### discard()
+Removes a specified item.
+
+```python
+s = {1, 2, 3}
+s.discard(2)
+print(s)
+```
+
+### Note
+- If the item is not present, `discard()` does **not** give an error.
+
+***
+
+### pop()
+Removes a random item from the set.
+
+```python
+s = {1, 2, 3}
+x = s.pop()
+print(x)
+print(s)
+```
+
+### Note
+- Since sets are unordered, the removed item is random.
+
+***
+
+### clear()
+Removes all items.
+
+```python
+s = {1, 2, 3}
+s.clear()
+print(s)
+```
+
+***
+
+## 7. Common Set Methods
+
+| Method | Use |
+|---|---|
+| `add()` | Add one item |
+| `update()` | Add many items |
+| `remove()` | Remove an item and show error if missing |
+| `discard()` | Remove an item safely |
+| `pop()` | Remove a random item |
+| `clear()` | Remove all items |
+
+***
+
+## 8. Set Operations
+
+Sets support mathematical operations.
+
+### Union
+Combines all items from both sets.
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a | b)
+```
+
+or
+```python
+print(a.union(b))
+```
+
+### Note
+- Union gives all unique values from both sets.
+
+***
+
+### Intersection
+Gives common items in both sets.
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a & b)
+```
+
+or
+```python
+print(a.intersection(b))
+```
+
+### Note
+- Intersection gives only shared values.
+
+***
+
+### Difference
+Gives items in first set but not in second.
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a - b)
+```
+
+or
+```python
+print(a.difference(b))
+```
+
+### Note
+- This shows values only in the first set.
+
+***
+
+### Symmetric Difference
+Gives items in both sets except common ones.
+
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a ^ b)
+```
+
+or
+```python
+print(a.symmetric_difference(b))
+```
+
+### Note
+- This gives values that are not shared.
+
+***
+
+## 9. Membership Test
+You can check whether an item is in a set.
+
+```python
+s = {10, 20, 30}
+print(20 in s)
+print(50 in s)
+```
+
+### Note
+- This is very fast in sets.
+
+***
+
+## 10. Looping Through Sets
+
+```python
+s = {1, 2, 3, 4}
+for x in s:
+    print(x)
+```
+
+### Note
+- The order may change every time because sets are unordered.
+
+***
+
+## 11. Set Conversions
+
+### List to set
+```python
+nums = [1, 2, 2, 3, 3, 4]
+s = set(nums)
+print(s)
+```
+
+### Set to list
+```python
+s = {1, 2, 3}
+lst = list(s)
+print(lst)
+```
+
+### Note
+- Convert to set to remove duplicates.
+- Convert back to list if you need indexing.
+
+***
+
+## 12. Practical Use of Sets
+
+### Remove duplicates from a list
+```python
+nums = [1, 2, 2, 3, 4, 4, 5]
+unique_nums = set(nums)
+print(unique_nums)
+```
+
+### Find common values
+```python
+a = {1, 2, 3}
+b = {2, 3, 4}
+print(a.intersection(b))
+```
+
+### Find all unique values
+```python
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a.union(b))
+```
+
+***
+
+## 13. Quick Revision
+
+- A set stores unique items.
+- Sets are unordered.
+- Indexing does not work on sets.
+- `add()` adds one item.
+- `update()` adds many items.
+- `remove()` errors if item is missing.
+- `discard()` does not error if item is missing.
+- `pop()` removes a random item.
+- `clear()` removes everything.
+- Union, intersection, difference, and symmetric difference are the main set operations.
+
+***
+
+## 14. Tiny Example Program
+
+```python
+nums = {1, 2, 3, 4}
+nums.add(5)
+nums.update([6, 7])
+nums.discard(2)
+
+print(nums)
+print(3 in nums)
+```
+
+***
