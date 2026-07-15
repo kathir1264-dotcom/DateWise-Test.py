@@ -91,40 +91,40 @@ def function(role):
     print(count2)
 function(n)
 
-# #11. Write a Python program to find and print the index of a specific value in a list.
-# n=[12,25,36,54,5]
-# value=int(input("enter the value:"))
-# index=0
-# for i in range(len(n)):
-#     if n[i]==value:
-#         print("The index of the given value in the list is:",i)
-#         break
-# else:
-#     print("value not found")
+#11. Write a Python program to find and print the index of a specific value in a list.
+n=[12,25,36,54,5]
+value=int(input("enter the value:"))
+index=0
+for i in range(len(n)):
+    if n[i]==value:
+        print("The index of the given value in the list is:",i)
+        break
+else:
+    print("value not found")
 
-# #12. Write a Python program to replace all negative numbers in a list with 0.
-# n=[-7,-6,-5,-4,-3]
-# for i in range(len(n)):
-#     if n[i]<0:
-#         n[i]=0
-# print(n)
+#12. Write a Python program to replace all negative numbers in a list with 0.
+n=[-7,-6,-5,-4,-3]
+for i in range(len(n)):
+    if n[i]<0:
+        n[i]=0
+print(n)
 
-# #13. Write a Python program to print all numbers greater than 50 from a list.
-# n=[49,50,51,52,53,115]
-# for i in n:
-#     if i>50:
-#         print(i)
+#13. Write a Python program to print all numbers greater than 50 from a list.
+n=[49,50,51,52,53,115]
+for i in n:
+    if i>50:
+        print(i)
 
 #14. Write a Python program to create a new list containing the squares of each element.
-# n=(15,20,11,15,14)
-# square=[]
-# for i in n:
-#     square.append(i**2)
-# print(square)
+n=(15,20,11,15,14)
+square=[]
+for i in n:
+    square.append(i**2)
+print(square)
 
-# # #15. Write a Python program to print all duplicate values in a list.
-# n=(12,50,15,15)
-# duplicate=[]
-# for i in n:
-#     if n.count(i)>1:
-#         print(i)
+# #15. Write a Python program to print all duplicate values in a list.
+n=(12,50,15,15)
+duplicate=[]
+for i in n:
+    if n.count(i)>1:
+        print(i)
